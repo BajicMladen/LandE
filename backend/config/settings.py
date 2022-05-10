@@ -9,11 +9,11 @@ BASE_DIR = environ.Path(__file__) - 2
 
 env.read_env(env_file=BASE_DIR('.env'))
 
-SECRET_KEY = 'django-insecure-9ne%-$uz56hg07h3b3s^&4n)@ijqjh2_5md&2(beb$919@m)&1'
+SECRET_KEY = env.str('SECRET_KEY')
 
-DEBUG = True
+DEBUG = env.str('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
 # Application definition
 
